@@ -18,3 +18,10 @@
 git remote add origin https://github.com/Danielsjp/python_basico.git
 git branch -M main 
 git push -u origin main
+
+
+#cuando has hecho cambios en la nube
+# tienes que hacer un pull para bajarte lo que teiens en la nube
+# te dira que hay un conflictogit 
+
+#
