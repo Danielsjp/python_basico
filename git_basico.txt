@@ -1,0 +1,14 @@
+# Configuración de GIT
+# git: git config --global user.name daniel.sanchez
+# git config --global user.email sjp.daniel@gmail.com
+# si no estas en windows correccion de salto de linea: git config --global core.autocrlf true 
+# git config --global core.editor "code --wait"
+# editar ver fichero: git config --global -e   
+# git init
+# git status 
+# git add 0*
+# git add . ( esto lo sube todo menos lo del ignore)
+# .gitignore
+# git rm --cached 04_strings.py (esto lo quita de A y lo retrocede a U)
+# la A hace que git este pendiente de cada cambio
+# en la U todavia no monitoriza ningun cambio
