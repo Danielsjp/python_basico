@@ -36,3 +36,23 @@ CARACTERÍSTICAS BÁSICAS DE PYTHON
 
 # la A hace que git este pendiente de cada cambio
 # en la U todavia no monitoriza ningun cambio
+
+# tipado en python
+# las variables pueden ser:
+# -- números -> enteros int, decimales float, complejos
+# -- texto -> string
+# -- booleanos -> True / False
+  -- 
+
+# Python es de tipado dinamico
+
+numero = 1
+numero = "uno"
+
+# es de tipado fuerte
+
+suma = numero + 2 # error
+concatenacion = numero + str(2)
+suma_numerica = int("1") + 2
+
+# En python, por defecto NO existen las constantes.
