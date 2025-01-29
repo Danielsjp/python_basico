@@ -13,3 +13,8 @@
 # la A hace que git este pendiente de cada cambio
 # en la U todavia no monitoriza ningun cambio
 # git commit -m "mensaje" (el archivo lo doy por bueno para subirlo)
+# git log ( vemos todos los cambios)
+
+git remote add origin https://github.com/Danielsjp/python_basico.git
+git branch -M main 
+git push -u origin main
