@@ -24,4 +24,4 @@ git push -u origin main
 # tienes que hacer un pull para bajarte lo que teiens en la nube
 # te dira que hay un conflictogit 
 
-#
+#1
