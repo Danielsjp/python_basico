@@ -10,3 +10,6 @@ edad = 42
 frase = "Me llamo " + nombre + " " + apellido + " y tengo " + str(edad) + " años"
 
 print(frase)
+
+
+print(f"Me llamo {nombre} {apellido} y tengo {edad} años")
