@@ -82,9 +82,18 @@ print (numero.isalnum())
 # cambiar caracteres
 print(frase2.replace("es", "os"))
 
-
-
 numero_de_palabras = len(frase2.split())
 print(numero_de_palabras)
 
+#Mini ejercicio
+
+texto = "bUeNoS dIas"
+
+# pasa a minusculas
+texto1 = texto.lower()
+
+# pasa a capitize
+print(texto1.capitalize())
+
+print("ab" > "ac")
 
