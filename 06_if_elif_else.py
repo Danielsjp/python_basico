@@ -49,31 +49,34 @@ Jueves = True # jueves, paella
 #     años = edad - 18
 #     print(f"Ya puedes votar desde hace {años} años")
 
-num1 = int(input("Num 1 ->"))
-num2 = int(input("Num 2 ->"))
+num1 = input("Num 1 ->")
+num2 = input("Num 2 ->")
 Ope = input("Que operación quieres hacer? opciones: suma,resta,multi,division,exp,div_ent,modulo ->")
 
-if num1.is_integer and num2.is_integer:
+if num1.isnumeric and num2.isnumeric:
     if Ope == "suma":
-        suma = num1 + num2
-        print(f"{num1} + {num2}={suma}")
+        suma = float(num1) + float(num2)
+        print(f"{num1} + {num2} = {round(suma, 2)}")
     elif Ope == "resta":
-        resta = num1 - num2
-        print(f"{num1} - {num2}={resta}")
+        resta = float(num1) - float(num2)
+        print(f"{num1} - {num2} = {round(resta,2)}")
     elif Ope == "multi":
-        multi = num1 * num2
-        print(f"{num1} * {num2}={multi}")
+        multi = float(num1) * float(num2)
+        print(f"{num1} * {num2} = {round(multi,2)}")
     elif Ope == "division":
-        division = num1 / num2
-        print(f"{num1} / {num2}={division}")
+        if float(num2)> 0:
+            division = float(num1) / float(num2)
+            print(f"{num1} / {num2} = {round(division,2)}")
+        else:
+            print ("NO se puede divir por cero")
     elif Ope == "exp":
-        exp = num1 ** num2
-        print(f"{num1} ** {num2}={exp}")
+        exp = float(num1) ** float(num2)
+        print(f"{num1} ** {num2} = {round(exp,2)}")
     elif Ope == "div_ent":
         pass
     elif Ope == "modulo":
-        modulo = num1 % num2
-        print(f"{num1} % {num2}={modulo}")
+        modulo = float(num1) % float(num2)
+        print(f"{num1} % {num2} = {round(modulo,2)}")
     else:
         print("Eso no es una operacion valida")
 else:
