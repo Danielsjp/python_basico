@@ -53,8 +53,8 @@ num1 = input("Num 1 ->")
 num2 = input("Num 2 ->")
 Ope = input("Que operación quieres hacer? opciones: suma,resta,multi,division,exp,div_ent,modulo ->")
 
-if num1.isnumeric and num2.isnumeric:
-    if Ope == "suma":
+if num1.isnumeric() and num2.isnumeric():
+    if  Ope == "suma":
         suma = float(num1) + float(num2)
         print(f"{num1} + {num2} = {round(suma, 2)}")
     elif Ope == "resta":
@@ -68,12 +68,16 @@ if num1.isnumeric and num2.isnumeric:
             division = float(num1) / float(num2)
             print(f"{num1} / {num2} = {round(division,2)}")
         else:
-            print ("NO se puede divir por cero")
+            print ("NO se puede dividir por cero")
     elif Ope == "exp":
         exp = float(num1) ** float(num2)
         print(f"{num1} ** {num2} = {round(exp,2)}")
     elif Ope == "div_ent":
-        pass
+        if float(num2)> 0:
+            division = int(num1) // int(num2)
+            print(f"{num1} // {num2} = {round(division,2)}")
+        else:
+            print ("NO se puede dividir por cero")
     elif Ope == "modulo":
         modulo = float(num1) % float(num2)
         print(f"{num1} % {num2} = {round(modulo,2)}")
