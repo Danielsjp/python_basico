@@ -48,10 +48,32 @@ Jueves = True # jueves, paella
 # else:
 #     años = edad - 18
 #     print(f"Ya puedes votar desde hace {años} años")
+import os
 
-num1 = input("Num 1 ->")
-num2 = input("Num 2 ->")
-Ope = input("Que operación quieres hacer? opciones: suma,resta,multi,division,exp,div_ent,modulo ->")
+def clear_console():
+    # Check the operating system
+    if os.name == 'nt':  # For Windows
+        os.system('cls')
+    else:  # For Unix/Linux/MacOS
+        os.system('clear')
+
+# Example usage:
+clear_console()
+
+print("###############################")
+print("#WELCOME TO THE CALCULATOR 1.0#")
+print("###############################")
+print("")
+
+num1 = input("Insert Num 1 ->")
+num2 = input("Insert Num 2 ->")
+Ope  = input("¿Que operación quieres hacer? opciones: suma,resta,multi,division,exp,div_ent,modulo ->")
+
+# print(num1.isdigit())
+# print(num1.isdecimal())
+# print(num1.isnumeric())
+# print(num1.isalpha())
+# if not num1.isdigit(): (negamos)
 
 if num1.isnumeric() and num2.isnumeric():
     if  Ope == "suma":
@@ -68,21 +90,21 @@ if num1.isnumeric() and num2.isnumeric():
             division = float(num1) / float(num2)
             print(f"{num1} / {num2} = {round(division,2)}")
         else:
-            print ("NO se puede dividir por cero")
+            print("NO se puede dividir por cero")
     elif Ope == "exp":
         exp = float(num1) ** float(num2)
         print(f"{num1} ** {num2} = {round(exp,2)}")
     elif Ope == "div_ent":
         if float(num2)> 0:
             division = int(num1) // int(num2)
-            print(f"{num1} // {num2} = {round(division,2)}")
+            print(f"{num1} // {num2} = {division}")
         else:
-            print ("NO se puede dividir por cero")
+            print("NO se puede dividir por cero")
     elif Ope == "modulo":
         modulo = float(num1) % float(num2)
         print(f"{num1} % {num2} = {round(modulo,2)}")
     else:
         print("Eso no es una operacion valida")
 else:
-    print("no son numeros")
+    print("no son numeros!")
 
