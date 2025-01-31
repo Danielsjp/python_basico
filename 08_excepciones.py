@@ -10,12 +10,15 @@ os.system("cls")
 
 try:
     num = float(input("Escribe un numero ...."))
-    print(1/0)
-    print("Despues de la división por cero")
+    # print(1/0)
+    # print("Despues de la división por cero")
 #catch en otros lenguajes
 except ValueError:
-    print("value errorrrrr")
+    print("has de introducir un numero")
+except ZeroDivisionError:
+    print("No se puede divir por cero")
 except:
+    #error generico
     print("ha ocurrido un error al dividir por cero")
 
 print("El programa continua ....")
