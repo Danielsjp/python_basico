@@ -56,3 +56,21 @@ str(6)
 # if
 # if / else / 
 # if / elif
+
+# añadir un elemento al final
+lista.append(6)
+# quitar un elemento final
+lista.pop(6)
+# quitar pol... ejecutar tantas veces como exista pol
+lista.remove("Pol")
+# 
+lista.insert(1, "hola")
+#eliminar por posicion concreta
+del lista[4]
+
+lista_1 = [0, 1, 2]
+lista_2 = [2, 3, 4]
+
+lista_1.extend(lista_2)
+lista_1 = lista_1 + lista_2
+lista_1 += lista_2
