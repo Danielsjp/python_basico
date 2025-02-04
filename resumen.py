@@ -74,3 +74,7 @@ lista_2 = [2, 3, 4]
 lista_1.extend(lista_2)
 lista_1 = lista_1 + lista_2
 lista_1 += lista_2
+
+a = 22
+
+a  = 
