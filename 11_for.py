@@ -62,14 +62,31 @@
 # print(puntero)
 
 nombres = ["Pol", "Pau", "Luis", "Juan", "Pablo", "paco"]
-check = "Luis"
+# check = "Luis"
 
-for nombre in nombres:
-    if nombre.lower() == check.lower():
-        print(nombre)
-        break
-else:
-    print("No encontrado")
+# for nombre in nombres:
+#     if nombre.lower() == check.lower():
+#         print(nombre)
+#         break
+# else:
+#     print("No encontrado")
 #print(nombres.index(check))
 
+nombres_con_o = []
+for nombre in nombres:
+    indice = nombres.index(nombre)
+    if "o" in nombre.lower():
+        print(f"{nombre} esta en la posicion {indice+1}")
+        nombres_con_o.append(nombre)
+
+print(nombres_con_o)
+
+print(list(range(10)))
+
+for num in range(10):
+    print(num+1)
+# for num in ran
+
+for index in range(len(nombres)):
+    print(f"{index} {nombres[index]}")
 
