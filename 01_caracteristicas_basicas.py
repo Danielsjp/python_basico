@@ -21,8 +21,8 @@ CARACTERÍSTICAS BÁSICAS DE PYTHON
 # Que debemos hacer
 # Nomb
 
-#git: git config --global user.name daniel.sanchez
-#   git config --global user.email sjp.daniel@gmail.com
+# git: git config --global user.name daniel.sanchez
+# git config --global user.email sjp.daniel@gmail.com
 # git config core autocrlf true
 # si no estas en windows: git config --global core.autocrlf true 
 # git config --global core.editor "code --wait"
@@ -42,7 +42,6 @@ CARACTERÍSTICAS BÁSICAS DE PYTHON
 # -- números -> enteros int, decimales float, complejos
 # -- texto -> string
 # -- booleanos -> True / False
-  -- 
 
 # Python es de tipado dinamico
 
