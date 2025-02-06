@@ -24,11 +24,18 @@ Si escribe un número entero puede pasar que
 
 . 
 """
+
+#Inicializamos una variable en True que luego utilizaremos
 condicion = True
+#Empezamos un bucle que se repite 3 veces
 for intento in range(3):
+    #Englobamos en un try que al pedir la variable sea int, si no falla.
     try:
+        #solicitamos al usuario introducir datos
         numero = int(input("introduce ->"))
+        #comparamos si el numero es mayor que 1 que entre en el bucle
         if numero > 1:
+            #por cada "numi" dentro del rango hasta el numero introducido verificamos que sea primo
             for numi in range (2,numero):
                    if numero%numi==0:
                           condicion = False
