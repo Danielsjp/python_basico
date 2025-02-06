@@ -20,25 +20,35 @@ Lo mismo si supera un día o una semana.
 """
 
 print("Conversor de segundos")
-seconds = int(input("Introduzca una cantidad de segundos"))
-seconds = seconds % (24 * 3600)
-hour = seconds // 3600
-seconds %= 3600
-minutes = seconds // 60
-seconds %= 60
+
+tiempo = int(input("Introduzca una cantidad de segundos"))
+
+minutos = tiempo / 60
+horas = int(tiempo / 60 / 60)
+horas_minutos = tiempo / 60 / 60
+
+# print(minutos)
+# print(horas)
+# print(horas_minutos)
 
 
-if segundos < 60:
-    print(f"{segundos} son menos de 1 minuto")
+if tiempo >= 60:
+    segundos2 = minutos - round(minutos)
+    print(f"{tiempo}segundos son {round(minutos)} minutos y {round(segundos2*100)} segundos")
 
-elif segundos >= 60:
-    minutos = segundos / 60
-    minutos2 = round(minutos, 0)
-    segundos2 = round(minutos - minutos2,2)
-    print(f"{segundos} son {minutos2} minutos y {segundos2*10} segundos")
+elif tiempo < 60:
+    print(f"{tiempo} segundos son menos de 1 minuto")
 
-elif segundos > 3600:
-    horas = segundos / 3600
-    horas2 = round(horas, 0)
-    minutos2 = round(horas - horas2,2)
-    print(f"{segundos} son {horas2} horas y {minutos2*10} minutos")
+
+
+# elif segundos >= 60:
+#     minutos = segundos / 60
+#     minutos2 = round(minutos, 0)
+#     
+#     print(f"{segundos} son {minutos2} minutos y {segundos2*10} segundos")
+
+# elif segundos > 3600:
+#     horas = segundos / 3600
+#     horas2 = round(horas, 0)
+#     minutos2 = round(horas - horas2,2)
+#     print(f"{segundos} son {horas2} horas y {minutos2*10} minutos")

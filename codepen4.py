@@ -1,8 +1,7 @@
 # Tenemos esta lista de animales:
-
 animales = ["gato", "perro", "caballo", "paloma", "murcielago", "leon", "mono"]
 indicador = False
-# pedir una letra e indicar que animales tienen esa letra
+# Pedir una letra e indicar que animales tienen esa letra
 try:
     letra = input("Introduce una letra -> ")
     for i in animales:
