@@ -31,15 +31,15 @@ horas_minutos = tiempo / 60 / 60
 # print(horas)
 # print(horas_minutos)
 
-
-if tiempo >= 60:
+if horas >= 1:
+    minutos2 = horas_minutos - round(horas)
+    print(f"{tiempo} segundos son {horas} horas y {round(minutos2*100)} minutos")
+elif tiempo >= 60:
     segundos2 = minutos - round(minutos)
     print(f"{tiempo}segundos son {round(minutos)} minutos y {round(segundos2*100)} segundos")
 
 elif tiempo < 60:
     print(f"{tiempo} segundos son menos de 1 minuto")
-
-
 
 # elif segundos >= 60:
 #     minutos = segundos / 60
