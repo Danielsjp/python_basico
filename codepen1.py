@@ -12,7 +12,9 @@ try:
     entero = int(input("Introduce un numero entero"))
     if entero >= 0 and entero <= 100:
         for i in range(0,entero+1):
-            if i % 3 == 0 and entero % 5 == 0 :
+            # if i == 0:
+            #     print(0)
+            if i % 3 == 0 and i % 5 == 0 :
                 print(f"{i} FIZZ-BUZ")
             elif i % 5 == 0 :
                 print(f"{i} BUZZ")
