@@ -18,3 +18,11 @@ Lo mismo si supera un día o una semana.
 
 . 
 """
+
+print("Conversor de segundos")
+segundos = int(input("Introduzca una cantidad de segundos"))
+if segundos < 60:
+    print(f"{segundos} son menos de 1 minuto")
+elif segundos >= 60:
+    minutos = segundos / 60
+    print(f"{segundos} son {minutos}")

@@ -49,24 +49,27 @@ Lo mismo que el ejercicio anterior, pero con palabras en lugar de letras.
 . 
 """
 
-print("Contar letras en un texto")
-letras = input("Por favor, introduzca un texto ")
-letras = letras.split(" ")
-newlist = "".join(letras)
-duplicadas = []
-repes = []
-junto = []
-for letra in newlist:
-    #repes = newlist.count(letra)
-    if letra not in duplicadas:
-        duplicadas.append(letra)
-        repes.append(newlist.count(letra))
-duplicadas.sort()
-print(duplicadas)
-print(repes)
 
-for valor1, valor2 in zip(duplicadas, repes):
-    print(f"{valor1}, {valor2}")
+
+
+# print("Contar letras en un texto")
+# letras = input("Por favor, introduzca un texto ")
+# letras = letras.split(" ")
+# newlist = "".join(letras)
+# duplicadas = []
+# repes = []
+# junto = []
+# for letra in newlist:
+#     #repes = newlist.count(letra)
+#     if letra not in duplicadas:
+#         duplicadas.append(letra)
+#         repes.append(newlist.count(letra))
+# duplicadas.sort()
+# print(duplicadas)
+# print(repes)
+
+# for valor1, valor2 in zip(duplicadas, repes):
+#     print(f"{valor1}, {valor2}")
 
 # duplicadas = []
 # repeticiones = []
@@ -83,4 +86,3 @@ for valor1, valor2 in zip(duplicadas, repes):
 # for valor1, valor2 in zip(duplicadas, repeticiones):
 #     print(f"{valor1}, {valor2}")
 
-       
