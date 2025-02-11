@@ -8,7 +8,7 @@ Necesitamos un menu con estas opciones
 """
 
 users = [] 
-visitas = 0
+visitas = 1
 
 
 a=True
@@ -36,13 +36,20 @@ while a==True:
                     if user["nombre"] == new_user:
                         print("Ya existe el usuario")
                     else:
-                        user_dic = {"nombre":new_user, "visitas": 0}
+                        user_dic = {"nombre":new_user, "visitas": visitas}
                         users.append(user_dic)
             else:
-                user_dic = {"nombre":new_user, "visitas": 0}
+                user_dic = {"nombre":new_user, "visitas": 1}
                 users.append(user_dic)
         case "2":
-            pass
+            visita_usuario = input("Visita del usuario -->").strip().title()
+            if users:
+                for user in users:
+                    if user["nombre"] == visita_usuario:
+                        visitas += 1
+                        user_dic.update({"nombre": visita_usuario, "visitas": visitas})
+                    else:
+                        print("El usuario no existe")
         case "3":
             pass
         case "4":
