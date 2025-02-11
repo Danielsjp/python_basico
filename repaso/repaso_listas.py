@@ -47,4 +47,8 @@ print(lista2)
 
 lista_cuadrados = print([ x**2 for x in lista_numeros ])
 
+lista_ciudades = ['NY', 'LA', 'BCN']
+ny, la, bcn = lista_ciudades
+print(bcn)
+
 
