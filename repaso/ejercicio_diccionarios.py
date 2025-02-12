@@ -20,6 +20,13 @@ Consideraremos que el nombre de cada usuario es único
 
 import os
 os.system("cls")
+
+def add_user(new_user, users):
+    user_dic = {"nombre":new_user, "visitas": 0 }
+    users.append(user_dic)
+    return (f"Usuario {new_user} añadido correctamente")
+
+
 users_name = []
 users = []
 while True:
@@ -48,17 +55,18 @@ X. Salir
                 
                 # Si el nombre no está en la lista lo añadimos
                 if new_user not in users_name:
-
-                    user_dic = {"nombre":new_user, "visitas": 0 }
-                    users.append(user_dic)
-                    print(f"Usuario {new_user} añadido correctamente")
+                    # user_dic = {"nombre":new_user, "visitas": 0 }
+                    # users.append(user_dic)
+                    # print(f"Usuario {new_user} añadido correctamente")
+                    print(add_user(new_user, users))
 
                 else:
                     print("El usuario ya existe")
             else:
-                user_dic = {"nombre":new_user, "visitas": 0 }
-                users.append(user_dic)
-                print(f"Usuario {new_user} añadido correctamente")
+                # user_dic = {"nombre":new_user, "visitas": 0 }
+                # users.append(user_dic)
+                # print(f"Usuario {new_user} añadido correctamente")
+                print(add_user(new_user, users))
         case "2": 
 
             nombre_usuario = input("Nombre usuario --> ").strip().title()
