@@ -29,6 +29,7 @@ def add_user(new_user, users):
 
 users_name = []
 users = []
+
 while True:
     menu = """
 1. Añadiremos un usuario 
@@ -59,7 +60,6 @@ X. Salir
                     # users.append(user_dic)
                     # print(f"Usuario {new_user} añadido correctamente")
                     print(add_user(new_user, users))
-
                 else:
                     print("El usuario ya existe")
             else:
@@ -68,14 +68,27 @@ X. Salir
                 # print(f"Usuario {new_user} añadido correctamente")
                 print(add_user(new_user, users))
         case "2": 
+            # for usuario in users:
+            #     if nombre_usuario == usuario["nombre"]:
+            #         usuario['visitas'] += 1
+            #         print(f"Actualizado usuari {nombre_usuario}")
+            #         break   
 
-            nombre_usuario = input("Nombre usuario --> ").strip().title()
-    
-            for usuario in users:
-                if nombre_usuario == usuario["nombre"]:
-                    usuario['visitas'] += 1
-                    print(f"Actualizado usuari {nombre_usuario}")
-                    break      
+            if users:
+                nombre_usuario = input("Nombre usuario --> ").strip().title()
+                existe_usuario = False
+                
+                for usuario in users:
+                    if nombre_usuario == usuario.get("nombre"):
+                        usuario['visitas'] += 1
+                        existe_usuario = True
+                        break  
+                if existe_usuario:
+                     print(f"Actualizado usuari {nombre_usuario}")    
+                else:
+                     print(f"{nombre_usuario} No existe")
+            else:
+                print("no hay usuarios")   
         case "3":
             
             nombre_usuario = input("Nombre usuario --> ").strip().title()

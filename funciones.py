@@ -29,7 +29,28 @@ print(sumar2("hola ","Manolo"))
 #el scope(ambito) de la variable es que si esta dentro de  una funcion no se ve fuera de ella... 
 # 
 
-def prueba_variable() :
-    variable = "Soy una prueba"
+# def prueba_variable() :
+#     variable = "Soy una prueba"
 
-print(variable)
+# print(variable)
+
+def mostrar_datos_alumno(nombre, apelido, becado= False):
+        if becado:
+                becado = "Sí"
+        else:
+                becado = "No"
+
+        return f"¿el alumno {nombre} {apelido} tiene beca? {becado}"
+
+alumno_1 = mostrar_datos_alumno("Anna", "Diaz")
+alumno_2 = mostrar_datos_alumno("Juan", "Sanchez", True)
+
+print(alumno_1)
+print(alumno_2)
+        
+def multiples_argumento(*argv):
+        for valor in argv:
+                suma = valor + valor
+        print(suma)
+
+multiples_argumento(1,2,3)
