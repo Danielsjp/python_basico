@@ -95,9 +95,9 @@ while iterar:
             print("")
             print(f"-------------------->> Total {total} Euros")
             print("Gracias por su visita")
-            pass
             print("########################################################################")
-            
+            pass
+
         case 'x':
 
             print("Saliendo....")
