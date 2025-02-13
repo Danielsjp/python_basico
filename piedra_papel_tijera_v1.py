@@ -5,7 +5,7 @@ Limitar un maximo de partidas
 Contar cuantas veces han ganado, perdido y empatado
 Preguntar el nombre del usuario
 
-Guardar los resultados del jugador con un ranking
+Guardar los resultados del jugador con un ranking, recuento de victorias y derrotas.
 
 """
 
