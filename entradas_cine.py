@@ -14,7 +14,7 @@ y el importe total.
 
 #limpiamos la pantalla
 import os
-os.system("cls")
+os.system('cls' if os.name == 'nt' else 'clear')
 
 #listas que contienen cantidad de tickets.
 ticket_estandard = []
@@ -27,57 +27,81 @@ mayores = 6.90
 infantiles = 7.20
 
 # checks
-
 seguridad = False
 
-while True:
+def comprar_entradas(cantidad, case):
+    if case == 1:
+        ticket_estandard.append(cantidad*estandard)
+    if case == 2:    
+        ticket_mayores.append(cantidad*mayores)
+    if case == 3:
+        ticket_menores.append(cantidad*infantiles)
 
-    print("TPV DE ENTRADAS")
+iterar = True
+
+while iterar:
+    
+    print("")
+    print("-------TPV D3 ENTRADAS------")
+    print("")
     print("1 .- Entrada estándar: 9.00")
     print("2 .- Mayores de 65 años (seniors) : 6.90")
     print("3 .- Infantiles : 7.20")
     print("4 .- Indicar Importe Total")
     print("x - para salir")
-    opcion = input("Elige tu opcion --> ").strip().lower()
+    print("")
+
+    opcion = input("Elige tu opcion --> ")
 
     match opcion:
         case '1':
+            case = 1
             cantidad = float(input("¿Cantidad de entradas?"))
-            ticket_estandard.append(cantidad*estandard)
+            comprar_entradas(cantidad, case)
             seguridad = True
             pass
 
         case '2':
+            case = 2
             cantidad = float(input("¿Cantidad de entradas?"))
-            ticket_mayores.append(cantidad*mayores)
+            comprar_entradas(cantidad, case)
             seguridad = True
             pass
 
         case '3':
-            
+            case = 3
             if seguridad:
                 cantidad = float(input("¿Cantidad de entradas?"))
-                ticket_menores.append(cantidad*infantiles)
+                comprar_entradas(cantidad, case)
                 pass
             else:
                 seguridad = input("¿va el menor acompañado responda: Si / No?")
                 if seguridad == 'Si':
-                    pass
+                    cantidad = float(input("¿Cantidad de entradas?"))
+                    comprar_entradas(cantidad, case)
                 else:
                     print("no se pueden vender entradas a menores no acompañados")
-                    break
-
-                
+                    #break
+                    iterar = False
 
         case '4':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print("")
+            print("########################################################################")
             total = sum(ticket_estandard) + sum(ticket_mayores) + sum(ticket_menores)
-            print(f"Cantidad tickets estandard {round(sum(ticket_estandard)/estandard)} total: {sum(ticket_estandard)}")
-            print(f"Cantidad tickets mayor edad {round(sum(ticket_mayores)/mayores)} total: {sum(ticket_mayores)}")
-            print(f"Cantidad tickets menores {round(sum(ticket_menores)/infantiles)} total: {sum(ticket_menores)}")
-            print(f"Cantidad {total}")
+            print(f"Cantidad tickets estandard {round(sum(ticket_estandard)/estandard)} total: {sum(ticket_estandard)} Euros")
+            print(f"Cantidad tickets mayor edad {round(sum(ticket_mayores)/mayores)} total: {sum(ticket_mayores)} Euros")
+            print(f"Cantidad tickets menores {round(sum(ticket_menores)/infantiles)} total: {sum(ticket_menores)} Euros")
+            print("")
+            print(f"-------------------->> Total {total} Euros")
             print("Gracias por su visita")
             pass
-        case 'x':
-            print("Saliendo....")
-            break        
+            print("########################################################################")
             
+        case 'x':
+
+            print("Saliendo....")
+            #break        
+            iterar = False
+else:
+    print("Programa finalizado")            
