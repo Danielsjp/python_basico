@@ -57,7 +57,20 @@ while compra_activa:
         else:
             print("Aun no ha realizado la compra")
     elif eleccion_entrada in lista_iniciales:
-        print("Puedes comprar")
+        # buscar la entrada que corresponde a la elección del cliente
+        for clave, valor in tipo_entrada.items():
+            if eleccion_entrada == clave[0]:
+                print(f"Has elegido : {clave}")
+                try:
+                    cantidad = int(input("Indique cuantas entradas desea --> "))
+            
+                except:
+                    print("Debe indicar un número entero")
+                    break
+                tipo = clave
+                precio = valor
+                subtotal = precio * cantidad
+
     else:
         os.system("cls")
         print("Opción incorrecta")
