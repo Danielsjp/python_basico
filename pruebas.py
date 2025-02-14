@@ -45,13 +45,25 @@
 # print(y)
 
 # Diccionario vacío
-person_data = {"name": "", "age": ""}
+# person_data = {"name": "", "age": ""}
 
-# Bucle para pedir los datos
-for key in person_data:
-    # Solicitar nombre o edad según la clave
-    person_data[key] = input(f"Introduce {key}: ")
+# # Bucle para pedir los datos
+# for key in person_data:
+#     # Solicitar nombre o edad según la clave
+#     person_data[key] = input(f"Introduce {key}: ")
 
-# Mostrar el diccionario con los datos ingresados
-print(person_data)
+# # Mostrar el diccionario con los datos ingresados
+# print(person_data)
 
+
+lista = []
+
+
+
+while True:
+   
+    name = input("Dime el name")
+    year = input("Dime el year")
+    diccionario = {"Nombre":name, "Edad":year}
+    lista.append(diccionario)
+    print(lista)
