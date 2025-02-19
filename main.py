@@ -26,6 +26,7 @@ def audio_a_texto():
 
             # mostrar en pantalla el texto
             print("Voz reconocida:", text)
+            return text
         except sr.UnknownValueError:
             print("el micro no funciona")
             return "Error"
@@ -95,7 +96,7 @@ def decir_dia_semana():
 
     respuesta_maquina(f"Hoy es {dias_esp[dia_semana]}")
 
-decir_dia_semana()
+#decir_dia_semana()
 
 
 def decir_la_hora():
@@ -104,7 +105,7 @@ def decir_la_hora():
     hora = f"En este momento son las {hora_actual.hour} horas, {hora_actual.minute} minutos y {hora_actual.second} segundos"
     respuesta_maquina(hora)
 
-decir_la_hora()
+#decir_la_hora()
 
 
 def saludo_inicial():
@@ -125,4 +126,25 @@ def saludo_inicial():
     respuesta_maquina(saludo)
     respuesta_maquina("¿En qué te puedo ayudar?")
 
-saludo_inicial()
+#saludo_inicial()
+
+# Funcion que lanza las demás
+
+def funcion_principal():
+
+    # Que empiece saludando
+    saludo_inicial()
+
+    #bucle infinito para que escuche
+    #lo que le vamos a pedir
+
+    activo = True
+    while activo:
+
+        peticion = audio_a_texto().lower()
+        print(peticion)
+
+        if peticion == "silencio":
+            activo = False
+
+funcion_principal()
