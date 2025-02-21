@@ -40,7 +40,7 @@ class Coche(Vehiculo):
         return f"El maletero del {self.marca} - {self.modelo} esta abierto"
 
 class Moto(Vehiculo):
-    def __init__(self, marca, modelo, anio, AC):
+    def __init__(self, marca, modelo, anio, AC: bool):
         super().__init__(marca, modelo, anio)
         #self.puertas = puertas
         self.AC = AC
@@ -54,5 +54,5 @@ vehiculo = Vehiculo("Opel", "Corsa", 1990)
 print(vehiculo.arrancar())
 coche = Coche("FERRARI", "Gacela", 2019, 4, True)
 print(coche.abrir_maletero())
-moto = Moto("yamaha", "namx", 2019, True)
+moto = Moto("yamaha", "nmax", 2019, True)
 print(moto.revisar_seguridad())
