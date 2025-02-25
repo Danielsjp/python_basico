@@ -20,6 +20,7 @@ El programa debe crear las siguientes clases con sus métodos:
 
 
 """
+from collections import Counter
 
 class Lector():
     def __init__(self, nombre, apellido):
@@ -58,11 +59,16 @@ class Biblioteca():
            print(f"{valor.nombre}, {valor.apellido}")
 
     def agregar_libro(self, libro: Libro):
-        if libro in self.lista_libros:
-            print (f"Ya existe {libro.titulo}")
-        else:
+            
+            i = 0
+            self.libro = libro
             self.lista_libros.append(libro)
-            print (f"Se ha agregado el libro {libro.titulo}")
+            
+            for item in self.lista_libros:
+                if item.titulo == self.libro.titulo:
+                    i +=1
+                    
+            print (f"Cantidad {i}, Se ha agregado el libro {libro.titulo}")
         
     def buscar_libro(self, name):
         self.name = name
@@ -76,7 +82,7 @@ class Biblioteca():
                break   
 
     def mostrar_libros(self):
-        i=0
+        i = 0
         for item in self.lista_libros:
             i +=1
             print(f"{i}-{item.titulo}")
