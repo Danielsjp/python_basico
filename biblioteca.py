@@ -64,12 +64,28 @@ class Biblioteca():
             self.libro = libro
             self.lista_libros.append(libro)
             
+            self.lista_stock = []
             for item in self.lista_libros:
                 if item.titulo == self.libro.titulo:
                     i +=1
-                    
+            stock = {"Libro": self.libro.titulo, "Cantidad": i}        
             print (f"Cantidad {i}, Se ha agregado el libro {libro.titulo}")
-        
+
+            self.lista_stock.append(stock)
+            print(self.lista_stock)
+
+    def reservar_libro(self, libro: Libro):
+            i = 0
+            for x in self.lista_stock:
+                for y,z in x.items():
+                    i += 1
+                    if i == 2:
+                        print(f"La cantidad de libros de {libro.titulo} era de {z}")
+                        nueva_cantidad = int(z)-1
+                        print(f"La cantidad de libros de {libro.titulo} ahora es de {nueva_cantidad}")
+                        #necesitamos actualizar ahora el diccionario
+                           
+
     def buscar_libro(self, name):
         self.name = name
 
@@ -92,14 +108,16 @@ class Biblioteca():
 
 sofia_barat = Biblioteca("Sofia Barat", "Carrer Girona 94")
 
-sofia_barat.agregar_lector(groucho)
-sofia_barat.agregar_lector(groucho)
-sofia_barat.agregar_lector(daniel)
-sofia_barat.agregar_lector(daniel)
+# sofia_barat.agregar_lector(groucho)
+# sofia_barat.agregar_lector(groucho)
+# sofia_barat.agregar_lector(daniel)
+# sofia_barat.agregar_lector(daniel)
 sofia_barat.agregar_libro(el_quijote)
 sofia_barat.agregar_libro(firmin)
-sofia_barat.mostrar_lectores()
-sofia_barat.buscar_libro("El quijote")
+# sofia_barat.mostrar_lectores()
+#sofia_barat.buscar_libro("El quijote")
 sofia_barat.agregar_libro(el_quijote)
 sofia_barat.agregar_libro(firmin)
-sofia_barat.mostrar_libros()
+sofia_barat.agregar_libro(firmin)
+sofia_barat.reservar_libro(firmin)
+#sofia_barat.mostrar_libros()
