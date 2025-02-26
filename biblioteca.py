@@ -31,6 +31,8 @@ groucho = Lector("Groucho", "Marx")
 
 daniel = Lector("Daniel", "Sanchez")
 
+pepe = Lector("Pepe", "Garcia")
+
 class Libro():
     def __init__(self, nombre_autor, apellido_autor, titulo):
         self.nombre_autor = nombre_autor
@@ -39,6 +41,7 @@ class Libro():
 
 el_quijote = Libro("Miguel de Cervantes", "Saavedra", "El quijote")    
 firmin = Libro("Pepito", "Rodriguez", "Firmin")
+lorem_ipsum = Libro("Lucas", "Grijander", "El fabuloso caso de benjamin button")
 
 class Biblioteca():
     
@@ -48,7 +51,9 @@ class Biblioteca():
         self.lista_lectores = []
         self.lista_libros = []
         self.lista_stock = []
-    
+        self.reserva = {}
+        self.lista_reservas = []
+
     def agregar_lector(self, cliente: Lector):
         if cliente in self.lista_lectores:
               print(f"Ya existe {cliente.nombre}")
@@ -56,8 +61,37 @@ class Biblioteca():
             self.lista_lectores.append(cliente)        
 
     def mostrar_lectores(self):
-       for valor in self.lista_lectores:
-           print(f"{valor.nombre}, {valor.apellido}")
+        
+        for valor in self.lista_lectores:
+            print(f"Los clientes dados de alta son {valor.nombre}, {valor.apellido}")
+            for item in self.lista_reservas:
+                nombre = valor.nombre
+                # if nombre in item:
+                #     print(f"Los clientes con reserva son {nombre}")
+
+        # if self.libro.titulo in self.lista_libros:
+        #         for name, cantidad in self.my_dict.items():
+        #             if name == self.libro.titulo:
+        #                 if self.cliente in self.lista_lectores:
+        #                     print(f"el stock de {name} es {cantidad}")
+
+        # print("Los libros siguientes estan reservados por....")
+        # print(self.lista_reservas)
+        # if nombre in self.lista_lectores:
+
+            # for item in self.lista_reservas
+            #     for x,y in self.reserva.items():
+
+                
+                
+
+
+
+            # for item in self.lista_reservas:
+            #     #print(f"{valor.nombre}, {valor.apellido}")
+            #     for x,y,z in self.reserva.values():
+            #         print(f"{valor.nombre}, {valor.apellido}")
+
 
     def agregar_libro(self, libro: Libro):
             
@@ -80,8 +114,7 @@ class Biblioteca():
     def reservar_libro(self, libro: Libro, cliente: Lector):
             self.libro = libro
             self.cliente = cliente
-            self.reserva = {}
-            self.lista_reservas = []
+            
             print (f"Reserva de {self.libro.titulo}")
             if self.libro.titulo in self.lista_libros:
                 for name, cantidad in self.my_dict.items():
@@ -112,27 +145,36 @@ class Biblioteca():
             print(f"{self.name} no existe")   
 
     def mostrar_libros(self):
-        i = 0
+        print("---titulo------------------AutorName---------------AutorApellido---------")
         for item in self.lista_libros:
-            i +=1
-            print(f"{i}-{item.titulo}")
+            if len(item) > 12:
+                print(f"{item[:16]}...              ")
+            else:
+                print(item)
+          
+            # tamanio = len(item)
+            # if tamanio > 12:
+            #     return item[:12] + ...
+            # else:
+            #     return item             
 
-    def __str__(self):
-        pass
+            
 
 sofia_barat = Biblioteca("Sofia Barat", "Carrer Girona 94")
 
 sofia_barat.agregar_lector(groucho)
 # # sofia_barat.agregar_lector(groucho)
 sofia_barat.agregar_lector(daniel)
+sofia_barat.agregar_lector(pepe)
 # # sofia_barat.agregar_lector(daniel)
 # sofia_barat.agregar_libro(firmin)
 #sofia_barat.agregar_libro(firmin)
 sofia_barat.agregar_libro(firmin)
 sofia_barat.agregar_libro(el_quijote)
+sofia_barat.agregar_libro(lorem_ipsum)
 #sofia_barat.agregar_libro(firmin)
 #sofia_barat.agregar_libro(firmin)
-# sofia_barat.mostrar_lectores()
+
 sofia_barat.buscar_libro("El quijote")
 #sofia_barat.agregar_libro(firmin)
 #sofia_barat.agregar_libro(firmin)
@@ -141,4 +183,6 @@ sofia_barat.buscar_libro("El quijote")
 #sofia_barat.reservar_libro(firmin)
 sofia_barat.reservar_libro(el_quijote, daniel)
 sofia_barat.reservar_libro(firmin, groucho)
+sofia_barat.mostrar_lectores()
 #sofia_barat.reservar_libro(el_quijote)
+sofia_barat.mostrar_libros()
