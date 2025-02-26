@@ -47,6 +47,7 @@ class Biblioteca():
         self.dirección = dirección
         self.lista_lectores = []
         self.lista_libros = []
+        self.lista_stock = []
     
     def agregar_lector(self, cliente: Lector):
         if cliente in self.lista_lectores:
@@ -60,42 +61,55 @@ class Biblioteca():
 
     def agregar_libro(self, libro: Libro):
             
-            i = 0
+            #i = 0
             self.libro = libro
-            self.lista_libros.append(libro)
-            
+            self.lista_libros.append(libro.titulo)
             self.lista_stock = []
-            for item in self.lista_libros:
-                if item.titulo == self.libro.titulo:
-                    i +=1
-            stock = {"Libro": self.libro.titulo, "Cantidad": i}        
-            print (f"Cantidad {i}, Se ha agregado el libro {libro.titulo}")
+            self.my_dict = {}
+            self.my_dict = {i:self.lista_libros.count(i) for i in self.lista_libros}
+            print("---")
+            print(self.my_dict)
+                #if self.libro.titulo in self.lista_libros:
+                # for item in self.lista_libros:
+                #     if item.titulo == self.libro.titulo:
+                #         i +=1
+                #         stock = {"Libro": self.libro.titulo, "Cantidad": i}        
+                #         #print (f"Cantidad {i}, Se ha agregado el libro {libro.titulo}")
+                #         self.lista_stock.append(stock.update(stock))
 
-            self.lista_stock.append(stock)
-            print(self.lista_stock)
-
-    def reservar_libro(self, libro: Libro):
-            i = 0
-            for x in self.lista_stock:
-                for y,z in x.items():
-                    i += 1
-                    if i == 2:
-                        print(f"La cantidad de libros de {libro.titulo} era de {z}")
-                        nueva_cantidad = int(z)-1
-                        print(f"La cantidad de libros de {libro.titulo} ahora es de {nueva_cantidad}")
-                        #necesitamos actualizar ahora el diccionario
-                           
-
+    def reservar_libro(self, libro: Libro, cliente: Lector):
+            self.libro = libro
+            self.cliente = cliente
+            self.reserva = {}
+            self.lista_reservas = []
+            print (f"Reserva de {self.libro.titulo}")
+            if self.libro.titulo in self.lista_libros:
+                for name, cantidad in self.my_dict.items():
+                    if name == self.libro.titulo:
+                        if self.cliente in self.lista_lectores:
+                            print(f"el stock de {name} es {cantidad}")
+                            new_stock = {name: cantidad-1}
+                            self.my_dict.update(new_stock)
+                            self.reserva = {self.cliente.nombre, self.libro.titulo}
+                            if cantidad == 0:
+                                print("NO HAY EXISTENCIAS")
+                                break
+                            else:
+                                self.lista_reservas.append(self.reserva)
+                            for name, cantidad in self.my_dict.items():
+                                if name == self.libro.titulo:
+                                    print(f"el stock actualizado de {name} es {cantidad}")
+                                    print(self.my_dict)
+                                    print(self.reserva)
+            else:
+                print("BYE")         
+                        
     def buscar_libro(self, name):
         self.name = name
-
-        for item in self.lista_libros:
-            if item.titulo == self.name:
-               print(f"Existe {item.titulo}")
-               break
-            else:
-               print(f"No existe {item.titulo}")
-               break   
+        if self.name in self.lista_libros:   
+            print(f"{self.name} existe")
+        else:
+            print(f"{self.name} no existe")   
 
     def mostrar_libros(self):
         i = 0
@@ -108,16 +122,23 @@ class Biblioteca():
 
 sofia_barat = Biblioteca("Sofia Barat", "Carrer Girona 94")
 
-# sofia_barat.agregar_lector(groucho)
-# sofia_barat.agregar_lector(groucho)
-# sofia_barat.agregar_lector(daniel)
-# sofia_barat.agregar_lector(daniel)
-sofia_barat.agregar_libro(el_quijote)
+sofia_barat.agregar_lector(groucho)
+# # sofia_barat.agregar_lector(groucho)
+sofia_barat.agregar_lector(daniel)
+# # sofia_barat.agregar_lector(daniel)
+# sofia_barat.agregar_libro(firmin)
+#sofia_barat.agregar_libro(firmin)
 sofia_barat.agregar_libro(firmin)
+sofia_barat.agregar_libro(el_quijote)
+#sofia_barat.agregar_libro(firmin)
+#sofia_barat.agregar_libro(firmin)
 # sofia_barat.mostrar_lectores()
-#sofia_barat.buscar_libro("El quijote")
-sofia_barat.agregar_libro(el_quijote)
-sofia_barat.agregar_libro(firmin)
-sofia_barat.agregar_libro(firmin)
-sofia_barat.reservar_libro(firmin)
-#sofia_barat.mostrar_libros()
+sofia_barat.buscar_libro("El quijote")
+#sofia_barat.agregar_libro(firmin)
+#sofia_barat.agregar_libro(firmin)
+#sofia_barat.agregar_libro(firmin)
+#sofia_barat.agregar_libro(firmin)
+#sofia_barat.reservar_libro(firmin)
+sofia_barat.reservar_libro(el_quijote, daniel)
+sofia_barat.reservar_libro(el_quijote, groucho)
+#sofia_barat.reservar_libro(el_quijote)
