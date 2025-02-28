@@ -18,8 +18,8 @@ El programa debe crear las siguientes clases con sus métodos:
         indicando si lo tiene o no
     - mostrar libros de la biblioteca
 
-
 """
+
 from collections import Counter
 
 class Lector():
@@ -63,6 +63,7 @@ class Biblioteca():
     def mostrar_lectores(self):
         
         for valor in self.lista_lectores:
+            
             print(f"Los clientes dados de alta son {valor.nombre}, {valor.apellido}")
             for item in self.lista_reservas:
                 nombre = valor.nombre
@@ -141,6 +142,7 @@ class Biblioteca():
         self.name = name
         if self.name in self.lista_libros:   
             print(f"{self.name} existe")
+
         else:
             print(f"{self.name} no existe")   
 
@@ -151,7 +153,7 @@ class Biblioteca():
                 print(f"{item[:16]}...              ")
             else:
                 print(item)
-          
+
             # tamanio = len(item)
             # if tamanio > 12:
             #     return item[:12] + ...
